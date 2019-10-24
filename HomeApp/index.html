@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>高大上的留言系统首页</title>
+    <style type="text/css">
+    thead {color:black;}
+    tbody {color:blue;}
+<!--    tfoot {color:red;}-->
+
+
+    </style>
+</head>
+<body>
+<h1>登录</h1>
+<form action="login" method="post">
+    {% csrf_token %}
+    username：<input type="text" name='user'/> <br>
+    password：<input type="text" name='password'/> <br>
+    <input type="submit" value="登录"/>
+    <a href="register">注册</a>
+</form>
+<h5>{{reminder}}</h5>
+</body>
+</html>
