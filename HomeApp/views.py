@@ -33,14 +33,14 @@ def msgproc(request):
 
 def index(request):
     '''登录页面'''
-    return render(request, "index.html")
+    return render(request, "login.html")
 
 def Login(request):
     '''登录页面逻辑'''
     cut = False
     if request.method == "POST":
-        user = request.POST.get('user', None)
-        password = request.POST.get('password', None)
+        user = request.POST.get('loginUsername', None)
+        password = request.POST.get('loginPassword', None)
         with open('UserInfo.txt', 'r') as f:
             data = f.read()  # 数据类型——>|wanhouchao|123456|@
             f.close()
@@ -53,10 +53,7 @@ def Login(request):
         return render(request, 'CloudsLeaveMsg.html')
     else:
         context = {'reminder':'用户名密码错误！！！'}
-        return  render(request, 'index.html',context)
-
-# def ceshi(request):
-#     return  HttpResponse('这是个测试页面')
+        return  render(request, 'login.html',context)
 
 
 def register(request):

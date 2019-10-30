@@ -21,7 +21,6 @@ urlpatterns = {
     path('admin/', admin.site.urls),
     path('', views.index),
     path('login', views.Login),
-    # path('login', views.Login),
     path('msggate/', views.msgproc),
     path('register/', views.register),
     path('register/Submit/', views.RegisterSubmit),
